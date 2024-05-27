@@ -3,7 +3,7 @@ import React from 'react';
 
 const Projects: React.FC = () => {
   return (
-    <div className="bg-white min-h-screen py-16">
+    <div className="p-8 bg-custom-light-gradient dark:bg-custom-dark-gradient min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-center mb-8">My Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

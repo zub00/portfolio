@@ -5,6 +5,7 @@ import Projects from './components/projects';
 import Hobbies from './components/hobbies';
 import Achievements from './components/achievments';
 import ContactMe from './components/contactme';
+import ThemeToggle from './components/themetoggle';
 
 
 const App: React.FC = () => {
@@ -19,17 +20,17 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-       <nav className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 py-4 shadow-md fixed w-full z-10">
+    <div className="bg-custom-light-gradient dark:bg-custom-dark-gradient min-h-screen text-gray-900 dark:text-gray-200">
+      <nav className="bg-custom-light-gradient dark:bg-custom-dark-gradient min-h text-gray-900 dark:text-gray-200 py-4 shadow-md fixed w-full z-10">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-white">Zubeyr Guled</h1>
-          <div>
-            <button onClick={() => scrollToSection(homeRef)} className="mx-2 text-gray-50 hover:text-gray-600">Home</button>
-            <button onClick={() => scrollToSection(projectsRef)} className="mx-2 text-gray-50 hover:text-gray-600">Projects</button>
-            <button onClick={() => scrollToSection(achievementsRef)} className="mx-2 text-gray-50 hover:text-gray-600">Achievements</button>
-            <button onClick={() => scrollToSection(hobbiesRef)} className="mx-2 text-gray-50 hover:text-gray-600">Hobbies</button>
-            <button onClick={() => scrollToSection(contactMeRef)} className="mx-2 text-gray-50 hover:text-gray-600">Contact Me</button>
-
+          <div className="flex items-center">
+            <button onClick={() => scrollToSection(homeRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Home</button>
+            <button onClick={() => scrollToSection(contactMeRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Contact Me</button>
+            <button onClick={() => scrollToSection(projectsRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Projects</button>
+            <button onClick={() => scrollToSection(achievementsRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Achievements</button>
+            <button onClick={() => scrollToSection(hobbiesRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Hobbies</button>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
