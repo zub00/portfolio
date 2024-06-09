@@ -3,16 +3,13 @@ import './index.css';
 import Header from './components/header';
 import Projects from './components/projects';
 import Hobbies from './components/hobbies';
-import Achievements from './components/achievments';
 import ContactMe from './components/contactme';
 import ThemeToggle from './components/themetoggle';
-
 
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
   const contactMeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const achievementsRef = useRef<HTMLDivElement>(null);
   const hobbiesRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
@@ -26,10 +23,9 @@ const App: React.FC = () => {
           <h1 className="text-2xl font-bold text-white">Zubeyr Guled</h1>
           <div className="flex items-center">
             <button onClick={() => scrollToSection(homeRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Home</button>
-            <button onClick={() => scrollToSection(contactMeRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Contact Me</button>
             <button onClick={() => scrollToSection(projectsRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Projects</button>
-            <button onClick={() => scrollToSection(achievementsRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Achievements</button>
             <button onClick={() => scrollToSection(hobbiesRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Hobbies</button>
+            <button onClick={() => scrollToSection(contactMeRef)} className="mx-2 text-white hover:bg-purple-800 py-2 px-4 rounded transition duration-300">Contact Me</button>
             <ThemeToggle />
           </div>
         </div>
@@ -41,9 +37,6 @@ const App: React.FC = () => {
   
       <div ref={projectsRef}>
         <Projects />
-      </div>
-      <div ref={achievementsRef}>
-        <Achievements />
       </div>
       <div ref={hobbiesRef}>
         <Hobbies />
