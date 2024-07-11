@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Replace the following divs with actual project components */}
           <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Project 1</h2>
+            <h2 className="font-semibold mb-2">Project 1</h2>
             <p className="text-gray-700">Description of Project 1</p>
           </div>
           <div className="bg-gray-200 p-4 rounded-lg shadow-md">

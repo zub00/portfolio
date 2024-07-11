@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const ContactMePage: React.FC = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+
+  // Function to handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      // Send POST request to backend endpoint
+      const response = await axios.post("http://localhost:3001/api/contact", {
+        fullName,
+        email,
+      });
+      console.log(response.data); // handle success
+      alert("Message sent successfully!");
+      // Clear the form fields after successful submission
+      setFullName("");
+      setEmail("");
+    } catch (error) {
+      console.error(error); // handle error
+      alert("Failed to send message.");
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-custom-light-gradient dark:bg-custom-dark-gradient">
       <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-4xl w-full flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 w-full mb-8 md:mb-0 md:pr-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-200 mb-6 text-center md:text-left">Contact Me</h1>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-700 dark:text-gray-300 mb-2" htmlFor="fullName">Full Name</label>
               <input
@@ -14,6 +38,9 @@ const ContactMePage: React.FC = () => {
                 id="fullName"
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
                 placeholder="Your Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
               />
             </div>
             <div>
@@ -23,6 +50,9 @@ const ContactMePage: React.FC = () => {
                 id="email"
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
                 placeholder="your.email@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             <div className="text-center md:text-left">
