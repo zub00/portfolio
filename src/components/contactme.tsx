@@ -10,7 +10,7 @@ const ContactMePage: React.FC = () => {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = await axios.post("http://localhost:3001/api/contact", {
+      const response = await axios.post("http://localhost:3001/api/contacts", {
         fullName,
         email,
       });
@@ -40,7 +40,6 @@ const ContactMePage: React.FC = () => {
                 placeholder="Your Full Name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                required
               />
             </div>
             <div>
@@ -52,7 +51,6 @@ const ContactMePage: React.FC = () => {
                 placeholder="your.email@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
               />
             </div>
             <div className="text-center md:text-left">
