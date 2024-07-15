@@ -21,8 +21,16 @@ const Projects: React.FC = () => {
           </div>
           {/* Project 2 */}
           <div className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Project 2</h2>
-            <p className="text-gray-700 dark:text-gray-300">Description of Project 2</p>
+            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Rock Paper Scissors Game</h2>
+            <p className="text-gray-700 dark:text-gray-300">A simple rock paper scissors game that you can play in the terminal.</p>
+            <a
+              href="https://github.com/zub00/Rock-paper-scissors-game"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              View on GitHub
+            </a>
           </div>
           {/* Project 3 */}
           <div className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-md">
